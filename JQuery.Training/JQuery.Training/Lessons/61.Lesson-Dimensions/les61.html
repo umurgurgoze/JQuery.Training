@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Eğitim Seti || Ders 61 || JQuery Dimensions</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <style>
+        #div1 {
+            border: 5px solid black;
+            width: 400px;
+            height: 400px;
+            padding: 10px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+
+    </div>
+
+    <div id="div2"></div>
+    <br /><br />
+    <button id="btn">Tıkla</button>
+    <script>
+
+        $(function () {
+            $("#btn").click(function () {
+
+                var a = $("#div1").width();
+                var b = $("#div1").height();
+                //var a = $("#div1").innerWidth(); Padding ekleyerek değer alır.
+                //var b = $("#div1").innerHeight();
+                //var a = $("#div1").outerWidth(); Padding ve border ekler.
+                //var b = $("#div1").height();
+                //var a = $("#div1").outerWidth(); Var olan tüm değerleri ekler.
+                //var a = $("#div1").width(600); Değer vermek için
+                $("#div2").html("Genişlik : " + a + "<br>Yükseklik : " + b);
+            });
+        });
+    </script>
+</body>
+</html>

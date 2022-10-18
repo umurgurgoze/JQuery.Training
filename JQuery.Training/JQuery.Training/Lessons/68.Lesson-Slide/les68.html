@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Eğitim Seti || Ders 68 || JQuery Slide</title>
+    <script src="../../wwwroot/lib/jquery/dist/jquery.min.js"></script>
+    <style>
+        .deneme {
+            width: 100%;
+            height: 150px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1" class="deneme" style="background-color:blue"></div>
+
+    <br />
+    <button id="btn1">SlideUp</button>
+    <button id="btn2">SlideDown</button>
+    <button id="btn3">SlideToggle</button>
+
+    <script>
+        //Slide Up => Alt kısımdan yukarıya doğru çıkarak nesneyi saklar.Bunu yaptığımızda ilgili classa ait display:none olmuş oluyor.
+        //Slide Down =>Üst kısımdan aşağıya doğru inerek nesneyi açar.
+        //SlideToggle => Nesne yukarı çıkmışsa aşağıya inerek gösterir, aşağıya inmişse yukarıya çıkarak gizler.
+        $(function () {
+            $("#btn1").click(function () {
+                $("#div1").slideUp();
+                $("#div2").slideUp("slow");
+                $("#div3").slideUp(3000);//Süre de verilebilir.
+
+            });
+            $("#btn2").click(function () {
+                $("#div1").slideDown();
+                $("#div2").slideDown("fast");
+                $("#div3").slideDown(3000);
+
+            });
+            $("#btn3").click(function () {
+                $("#div1").slideToggle();
+                $("#div1").slideToggle(3000);
+
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Eğitim Seti || Ders 52 || JQuery NoConflict</title>
+    <script src="../../wwwroot/lib/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+    <p>JQuery Öğreniyorum</p>
+    <p>JQuery Öğreniyorum</p>
+
+    <script>
+        var jq = $.noConflict(); // $ işareti yerine tanımladığımız değişkeni yazabilmemizi sağlar.
+
+        $(function () {
+            $("p").click();
+        });
+    </script>
+</body>
+</html>

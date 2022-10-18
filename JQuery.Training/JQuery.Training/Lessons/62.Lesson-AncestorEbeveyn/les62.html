@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Eğitim Seti || Ders 62 || JQuery Ancestor</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <style>
+        .deneme {
+            display: block;
+            border: 2px solid lightgrey;
+            color: gray;
+            padding: 5px;
+            margin: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1" class="deneme">
+        div (5.Ebeveyn) ID: #div1
+        <div id="div2" class="deneme">
+            div (4.Ebeveyn) ID: #div2
+            <ul class="deneme">
+                ul(3.Ebeveyn)
+                <li class="deneme">
+                    li(2.Ebeveyn)
+                    <p class="deneme">
+                        p(1.Ebeveyn)
+                        <span class="deneme">span</span>
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <div id="div3" class="deneme">
+            div ID:#div3
+            <div id="div4" class="deneme">
+                div ID: #div4
+            </div>
+        </div>
+        <h1 class="deneme">
+            h1
+        </h1>
+    </div>
+    <br />
+    <button id="btn">Tıkla</button>
+    <script>
+
+        $(function () {
+            $("#btn").click(function () {
+                //$("span").parents().css({ //Span elementinin üzerindeki tüm elementlere işlem yapar.
+                //$("span").parents("ul").css({ //Span elementinin üzerindeki sadece ul elementleri için işlem yapar.
+                //$("span").parents("#div2").css({ //Span elementinin üzerindeki id'si div2 olan elementler için işlem yapar.
+                //$("span").parentsUntil("#div2").css({ //Span elementinin üzerindeki id'si div2 olan elemente kadar olan elementler için işlem yapar.
+                //$("span").parentsUntil("div").css({ //Span elementinin üzerindeki ilk div elementine kadar olan elementler için işlem yapar.
+                $("span").parent().css({ //Span elementinin bir üzerindeki element üzerinde işlem yapar.Span'in içinde olduğu bir üst element.
+                    "border": "2px solid red",
+                    "color": "red"
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Eğitim Seti || Ders 54 || JQuery Mouse&Keyboard Events</title>
+    <script src="../../wwwroot/lib/jquery/dist/jquery.min.js"></script>
+    <style>
+        #div1 {
+            width: 100%;
+            height: 400px;
+            background-color: yellow;
+        }
+
+        #div2 {
+            width: 30%;
+            height: 200px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2">
+
+        </div>
+    </div>
+    <br />
+    <input id="txt" type="text" />
+    <br /><br />
+    <button id="btn">Tıkla</button>
+    <script>
+
+        $(function () {
+            //$("#btn").click(function () {-> Tek tıklama
+            //$("#btn").dblclick(function () { -> Double Click
+            //$("#div1").mouseenter(function () { ->Mouse ile o alana giriş(burada o alan div1)
+            //$("#div1").mouseleave(function () { ->Mouse o alanı terk ettiğinde(burada o alan div1)
+            //$("#div1").mouseover(function () { ->Mouse o alanın üzerindeyken yapar
+            //$("#div1").mouseout(function () { -> Mouse o alanın üzerinden çıkınca yapar.
+            //$("#div1").hover(function () { -> O alanın üzerine gelince yapar.
+            //$("#div1").mousedown(function () { -> Mouse tıklanınca işlemi yapar.
+            //$("#div1").mouseup(function () { -> Mouse tıkından parmağı kaldırınca işlemi yapar.
+
+            //$("#div1").keypress(function () { -> Tuşa basılınca işlem yapar.
+            //$("#div1").keydown(function () { -> Tuşa basılınca parmağı kaldırmadan önce bu işi yapar.
+            //$("#div1").keyUP(function () { -> Tuştan parmağı kaldırdığımızda çalışır.
+
+            $("#div1").mouseover(function () {
+                $("#div1").css("background-color", "red");
+            });
+        });
+
+    </script>
+</body>
+</html>

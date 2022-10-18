@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Eğitim Seti || Ders 74 || JQuery Draggable</title>
+    <script src="../../wwwroot/lib/jquery/dist/jquery.min.js"></script>
+    <script src="../../wwwroot/lib/jquery/dist/jquery-ui.min.js"></script>
+    <style>
+        .deneme {
+            width: 50%;
+            height: 400px;
+            background-color: yellow;
+            padding: 10px;
+        }
+
+        #div2 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            color: white;
+            text-align: center;
+        }
+
+        #p1 {
+            position: relative;
+            top: 80px;
+            height: 20px;
+            font-size: 32px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1" class="deneme">
+        <div id="div2">
+            DRAG
+            <p id="p1"></p>
+        </div>
+    </div>
+    <script>
+        //Kullanmadan önce jquery-ui.min.js dosyasını alıyoruz,tanıtıyoruz.Eğer bir geliştirme yapacaksak jquery-ui.js dosyasını almamız gerekir.
+
+        $(function () {
+            $("#div2").draggable({
+                //axis: "y", //Böyle yazarsak sadece y ekseninde hareket eder.Herhangi
+                axis: "both", //Böyle yazarsak her yere hareket edebilir.Default olarak bu şekildedir.
+
+                containment: "parent", //Yalnızca üst ebeveyn içerisinde bu işlemi yapmamızı sağlar.Yani burada div2'nin.
+                //containment: "#div1" //Direkt belirli bir element de verebiliriz.
+
+                start: function () {  //Sürükleme başladığında yaptırmak istediğimiz işlemler için kullanırız.
+                    $("#p1").html("Start");
+                },
+                stop: function () { //Sürükleme bittiğinde yapmak istediğimiz işlemler için kullanırız.
+                    $("#p1").html("Stop");
+                    $("#div1").css("background-color", "yellow");
+                },
+                drag: function () { //Sürükleme anında yapmak istediğimiz işlemler için.
+                    $("#div1").css("background-color", "blue"); //Arka plan rengini sürükleme bitince değiştirmek için tekrar stop kullanırız.
+                },
+                cursor: "move", //Sürükleme esnasında mouse tipini değiştiriyoruz.
+                cursorAt: { top: -5, left: -5 } //Mouse hareketi -5 -5 e odaklanır ve harekete oradan başlar.
+
+            });
+
+
+
+        });
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

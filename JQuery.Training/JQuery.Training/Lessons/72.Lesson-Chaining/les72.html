@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Eğitim Seti || Ders 72 || JQuery Chaining(Zincirleme)</title>
+    <script src="../../wwwroot/lib/jquery/dist/jquery.min.js"></script>
+    <style>
+        .deneme {
+            width: 100%;
+            height: 500px;
+            background-color: green;
+            margin-bottom: 15px;
+            font-size: 32px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">Start</button>
+
+    <br /><br /><br />
+
+    <div id="div1" class="deneme"></div>
+
+    <script>
+        $(function () {
+            $("#btn").click(function () {
+                setInterval(function () {
+                    $("#div1").hide(2000).show(2000).fadeOut(2000).fadeIn(2000).css("background-color", "yellow");
+                    //Bu şekilde arka arkaya da yazabiliriz. Aynı call back gibi. Fakat css önce çalışır.
+
+                }, 8000); //Set Interval her 8 saniyede bir aynı işlemi yapsın diye yazdık.Yazmazsak arka arkaya bir defa yapıp bırakır.
+
+                
+
+
+            });
+    </script>
+</body>
+</html>

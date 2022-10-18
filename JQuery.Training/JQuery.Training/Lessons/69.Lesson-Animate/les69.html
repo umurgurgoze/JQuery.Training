@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Eğitim Seti || Ders 69 || JQuery Animate</title>
+    <script src="../../wwwroot/lib/jquery/dist/jquery.min.js"></script>
+    <style>
+        .deneme {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 15px;
+            font-size: 32px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">Animate</button>
+    <br /><br /><br />
+
+    <div id="div1" class="deneme" style="background-color:gray">Javascript</div>
+
+    <script>
+        //***Animate ile background-color ve color haricinde istediğimiz css özelliğini verebiliriz.
+        $(function () {
+            $("btn").click(function () {
+                $("#div1").animate({
+                    left: "200px", // Butona tıklayınca 200px soldan kayma yapacak.
+                    top: "200px",  // Butona tıklayınca 200px üstten kayma yapacak.
+                    width: "400px",  //Butona tıklayınca kayma yaparken genişliği 400px'e 3 saniyede çıkaracak.
+                    fontSize: "64px",
+                    height: "+=100px" //Her tıklamada son haline 100px yükseklik ekler. -= yaparsak azaltır. toggle yaparsak açma kapama çalışır.
+                }, 3000); //Burada verdiğimiz sayı süre.3 saniyede bu işlemkeri yapacak.
+
+                $("#div1").animate({ width: "500px" }, 3000); //Bu şekilde ayrı ayrı da yazabiliriz.Böyle yaparsak işlemlerden biri bitince diğeri başlar.
+
+                $("#div1").queue(function () {
+                // Queue burada bir kuyruk oluşturur.İşlemlere ara verir ve queue'daki işlem yapılır.Dequeue dedikten sonra diğerleri devam eder.
+                    $(this).css("background-color", "yellow");
+                    $(this).dequeue();
+
+
+                });
+                $("#div1").animate({ width: "750px" }, 3000);
+
+            });
+
+        });
+    </script>
+</body>
+</html>

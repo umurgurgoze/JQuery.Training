@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Eğitim Seti || Ders 51 || JQuery Syntax</title>
+    <script src="../../wwwroot/lib/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+    <p>JQuery Öğreniyorum</p>
+    <p>JQuery Öğreniyorum</p>
+    <p>JQuery Öğreniyorum</p>
+    <p>JQuery Öğreniyorum</p>
+
+    <script>
+        /*Jquery'i dökümana 2 şekilde ekleyebiliriz. Biri indirip dosyayı tanıtarak, ikincisi cdn üzerinden linki yapıştırarak almaktır.
+        1.YOL jquery.com sayfasından compressed versiyonu ve uncompresed olarak iki versiyonu var.Bize sıkıştırılmış versiyonu yeterlidir.
+        2.YOL aynı sayfada alt tarafta cdnler bulunuyor.son sürüm linkini alıp sayfamızda head bölümüne yapıştırabiliriz.*/
+
+        //1) Sayfa yani html dökümanı ready olduğunda bu fonksiyonu çalıştır demektir.
+        $(document).ready(function () {
+
+        });
+
+        //2) Üstte yazan kodun daha kısa ve kullanışlı versiyonu.Sayfa yüklendiğinde çalışır demektir.
+        $(function () {
+            $("p").click(function () {
+                $(this).hide(); //this yani p için tıklandığında hide(gizleme) fonksiyonu çalışıyor.
+            });
+        });
+
+        //NOT = $("p") -> javascriptteki document.getElementById ya da querySelector karşılığıdır.
+
+        /* Aynısının Javascript karşılığı:
+
+         * var a = document.querySelectorAll("p");         
+        a[0].onclick = function () {
+            a[0].style.display = "none";
+            }
+        a[1].onclick = function () {
+            a[1].style.display = "none";
+            }
+        a[2].onclick = function () {
+            a[2].style.display = "none";
+            }
+        a[3].onclick = function () {
+            a[3].style.display = "none";
+            }
+       
+
+        */
+    </script>
+
+</body>
+</html>

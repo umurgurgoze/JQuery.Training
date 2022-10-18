@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Eğitim Seti || Ders 65 || JQuery Filtering</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <style>
+        .deneme {
+            display: block;
+            border: 2px solid lightgrey;
+            color: gray;
+            padding: 5px;
+            margin: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1" class="deneme c1">
+        #div1<br /><br />
+        .c1
+    </div>
+    <div id="div1" class="deneme c2">
+        #div2<br /><br />
+        .c2
+    </div>
+    <div id="div3" class="deneme c3">
+        #div3<br /><br />
+        .c3
+    </div>
+
+    <br />
+    <button id="btn">Tıkla</button>
+
+    <script>
+        $(function () {
+            $("#btn").click(function () {
+                //$("div").eq(0).css({//Index numarası ile işlem yapar.Index 0 div1 demektir.
+                //$("div").filter(".c2").css({//.c2 bulunduran divler için işlem yapar.
+                //$("div").not(".c2").css({//.c2 bulundurmayan divler için işlem yapar.
+                //$("div").last().css({ //Divlerden sonuncusu için işlem yapar.
+                $("div").first().css({ //Divlerden ilki için işlem yapar.
+                    "border": "2px solid green",
+                    "color": "green"
+                });
+            });
+        });
+
+    </script>
+
+</body>
+</html>

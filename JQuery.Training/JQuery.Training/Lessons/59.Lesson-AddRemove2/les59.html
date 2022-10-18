@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Eğitim Seti || Ders 59 || Add&Remove2</title>
+    <script src="../../wwwroot/lib/jquery/dist/jquery.min.js"></script>
+    <style>
+        #div1 {
+            border: 2px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1" class="deneme">
+        <p id="p1">Paragraf 1</p>
+        <p id="p2">Paragraf 2</p>
+        <p id="p3">Paragraf 3</p>
+        <p id="p4">Paragraf 4</p>
+    </div>
+    <div></div>
+    <br /><br />
+    <button id="btn">Tıkla</button>
+
+    <script>
+        //1-AppendTo'nun diğerinden farkı appendde önce neye yazacağımızı sonra ne yazacağımızı veriyoruz.
+        //Burada ise önce ne yazacağımızı sonra nereye yazacağımızı veriyoruz.
+        $(function () {
+            $("#btn").click(function () {
+                $("<p>Yeni Paragraf</p>").appendTo("#div1"); //Div içinde en alta yazar
+                $("<p>Yeni Paragraf</p>").prependTo("#div1");//Div içinde en üste yazar
+                $("<p>Yeni Paragraf</p>").insertAfter("#div1");//Div'den sonra yazar.
+                $("<p>Yeni Paragraf</p>").insertBefore("#div1");//Div'den önce yazar.
+                $("<p id='p5'>Yeni Paragraf</p>").appendTo("#div1");//Attribute eklemesi(id) yapabiliriz.
+                $("<p id='p5'>Yeni Paragraf</p>").replaceAll("p");//Sağdaki tüm elementler için soldakini yapar.
+                $("p").replaceWith("<p id='p5'>Yeni Paragraf</p>");//Soldaki elementler içim sağdakini yapar.
+                $("#p1").clone().appendTo("#div1");//P1'i alıp kopyalıyor ve div'in en altına yazdırıyor.
+
+            });
+        });
+    </script>
+</body>
+</html>

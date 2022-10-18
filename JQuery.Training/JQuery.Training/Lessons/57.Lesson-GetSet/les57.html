@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Eğitim Seti || Ders 57 || Get&Set</title>
+    <script src="../../wwwroot/lib/jquery/dist/jquery.min.js"></script>
+    <style></style>
+</head>
+<body>
+    <p id="p1">HTML</p>
+    <p id="p2">CSS</p>
+    <p id="p3">Javascript</p>
+
+    <input id="t1" type="text" value="JQuery" />
+    <br /><br />
+    <a id="a1" href="../56.Lesson-EventAndProxy/les56.html" target="_blank">Ders56</a>
+
+    <br /><br />
+    <button id="btn">Tıkla</button>
+
+    <script>
+        $(function () {
+            $("#btn").click(function () {
+                //alert($("#p1").text()); //1-Text = p1 içinde yazan değeri alıyoruz.Bunu bir değişkene de atayabiliriz.
+                //alert($("#p1").html());//2-HTML = html kodları ile birlikte verir.
+                //alert($("#t1").val());//3-Val = Inputların içinde value olarak verilen değerleri almak için.
+                //alert($("#a1").attr("href"));//4-Attr=Attribute değerleri için.
+                //alert($("#a1").attr("target"));
+                //alert($("#a1").attr("class"));
+                $("#p1").text("Jquery Öğreniyorum.");//5-P1'e ait yazıyı değiştirmek için bu şekilde.
+                $("#p1").html("<b>Jquery Öğreniyorum.<b>");//6-P1'e ait html olarak değiştirmek için.
+                $("#t1").val("Jquery Öğreniyorum.");//7-Value değeri değiştirmek için.
+                $("#a1").attr("href", "../55.Lesson-FormWindowEvent/les55.html");//8-Attribute değiştirmek için.
+                $("#a1").attr({
+                    "href": "../55.Lesson-FormWindowEvent/les55.html",
+                    "target": "_self"
+                });//9- Tek seferde çoklu attribute değiştirme.
+            });
+        });
+    </script>
+
+</body>
+</html>

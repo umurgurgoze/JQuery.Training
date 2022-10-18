@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Eğitim Seti || Ders 53 || JQuery Selectors</title>
+    <script src="../../wwwroot/lib/jquery/dist/jquery.min.js"></script>
+    <style>
+        table {
+            border: 1px solid black;
+        }
+
+        tr {
+            text-align: center;
+        }
+
+        td, th {
+            border: 1px solid black;
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p id="p1" class="c1">Paragraf 1 ID : p1 Class : c1</p>
+        <p id="p2" class="c1">Paragraf 2 ID : p2 Class : c1</p>
+        <p id="p3" class="c3">Paragraf 3 ID : p3 Class : c3</p>
+        <p id="p4" class="c4">Paragraf 4 ID : p4 Class : c4</p>
+    </div>
+
+    <table cellspacing="0">
+
+        <thead>
+            <tr>
+                <th>Ad/Soyad</th>
+                <th>Yaş</th>
+                <th>Meslek</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Doruk Akgül</td>
+                <td>24</td>
+                <td>Endüstri Mühendisi</td>
+            </tr>
+            <tr>
+                <td>Kılıç Kalender</td>
+                <td>26</td>
+                <td>Kaptan</td>
+            </tr>
+            <tr>
+                <td>İrem Şişman</td>
+                <td>22</td>
+                <td>Çevirmen</td>
+            </tr>
+            <tr>
+                <td>Barış Akgül</td>
+                <td>25</td>
+                <td>Mühendis</td>
+            </tr>
+        </tbody>
+    </table>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+        <li>JQuery</li>
+    </ul>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+        <li>JQuery</li>
+    </ul>
+
+    <a href="/Lessons/52.Lesson/les52.html" target="_blank">Ders 52</a>
+    <br /><br />
+
+    <button id="btn">Tıkla</button>
+    <script>
+
+        /*$(function () {
+            $("#btn").click(function () {
+                $("p").css("color", "red");//1-Direkt element üzerinden manüpilasyon
+                $("#p1").css("color", "red");//2-Id üzerinden manipülasyon.
+                $(".c1").css("color", "red");//3-Class üzerinden manipülasyon.
+                $("*").css("color", "red");//4-Html dökümanında bulunan tüm elementler için manipülasyon.
+                $(this).css("color", "red");//5-Üzerinde çalıştığımız eleman için manipülasyon.Burada "#btn".
+                $("p.c1").css("color", "red");//6-Belirli elementten belirli classa ait olanlar için.
+                $("#p2.c1").css("color", "red"); //7-Id'li bir elementten belirli classa ait olanlar için.
+                $("p:first").css("color", "red");//8-Belirli bir elementin ilki için.
+                $("p:last").css("color", "red");//9-Belirli bir elementin sonuncusu için.
+                $("ul li:first").css("color", "red");//10-Ilk ul'nin ilk li'sini kırmızı yapar.
+                $("ul li:first-child").css("color", "red"); //11- Bütün ul'lerin ilk li'leri için.
+                $("[id]").css("color", "red"); //12-Id'ye sahip olan tüm elementler için.
+                $("a[target='_blank']").css("color", "red"); //13-A elementlerinden target'ı blank olanlar için
+                $("a[target!='_blank']").css("color", "red"); //14-A elementlerinden target'ı blank olmayanlar.
+                $(":button").css("color", "red");} //15-Sayfada bulunan tüm button elementleri için.
+                $("p:contains(ID)").css("color", "red");//16-p elementlerinden id yazısı bulunduranlar için.
+                $("p:not(ID)").css("color", "red");//16-p elementlerinden id yazısı bulundurmayanlar için.
+                $("p:not(':contains(Deneme)')").css("color", "red");//17-İçinde deneme olanlar harici diğerleri için
+                $("div:has(p)").css("color", "red");//18-Div içerisinde p bulunduranlar için
+                $(".c1,#p4,ul").css("color", "red");//19-Tek seferde toplu manipülasyon.
+                $("tr:even").css("color", "red");//20-Index'i çift sayı olan satırlar için.
+                $("tr:odd").css("color", "red");//21-Index'i tek sayı olan satırlar için.
+        });*/
+
+        $(function () {
+            $("#btn").click(function () {
+                $("tr:even").css("color", "red");
+            });
+        });
+
+
+
+
+    </script>
+</body>
+</html>

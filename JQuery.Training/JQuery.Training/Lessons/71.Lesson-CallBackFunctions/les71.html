@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Eğitim Seti || Ders 71 || JQuery Call Back Functions</title>
+    <script src="../../wwwroot/lib/jquery/dist/jquery.min.js"></script>
+    <style>
+        .deneme {
+            width: 100%;
+            height: 500px;
+            background-color: green;
+            margin-bottom: 15px;
+            font-size: 32px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="btn1">Start</button>
+
+    <br /><br /><br />
+
+    <div id="div1" class="deneme"></div>
+
+    <script>
+        //Call Back Functions animasyonların tek kodlama ile arka arkaya yapılmasını sağlar.
+        $(function () {
+            $("#btn").click(function () {
+                //$("#div1").hide(2000, function () {
+                //    alert("Gizleme işlemi bitti.");
+                //});// ==>2 saniyede hide işlemi yaptı ve ekrana alert gösterdi.
+
+                $("#div1").hide(2000, function () {
+                    //$(this).show(2000); //==> 2 saniyede hide yaptı ve hemen arkasından iki saniyede show işlemi yaptı.
+                    $(this).show(2000, function () {
+                        $(this).fadeOut(2000, function () {
+                            $(this).fadeIn(2000); //Böyle iç içe sonsuz sayıda call back function yazılabilir.
+                        })
+                    });
+                });
+
+
+
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Eğitim Seti || Ders 64 || JQuery Siblings</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <style>
+        .deneme {
+            display: block;
+            border: 2px solid lightgrey;
+            color: gray;
+            padding: 5px;
+            margin: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1" class="deneme">
+        div (5.Ebeveyn) ID: #div1
+        <div id="div2" class="deneme">
+            div (4.Ebeveyn) ID: #div2
+            <ul class="deneme">
+                ul(3.Ebeveyn)
+                <li class="deneme">
+                    li(2.Ebeveyn)
+                    <p class="deneme">
+                        p(1.Ebeveyn)
+                        <span class="deneme">span</span>
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <div id="div3" class="deneme">
+            div ID:#div3
+            <div id="div4" class="deneme">
+                div ID: #div4
+            </div>
+        </div>
+        <h1 class="deneme">
+            h1
+        </h1>
+    </div>
+    <br />
+    <button id="btn">Tıkla</button>
+    <script>
+        //Örneğin div1 id içerisinde 3 çocuk element var ise bunlar kendi arasında kardeş olmuş oluyorlar.
+        $(function () {
+            $("#btn").click(function () {
+                //$("#div2").next().css({//Div2'den sonraki ilk kardeşi seçer.
+                //$("#div2").nextAll().css({//Div2'den sonraki tüm kardeşleri seçer.
+                //$("#div2").nextUntil("h1").css({//Kardeşlerden h1'e kadar olanları seçer.
+                //$("h1").prev().css({// h1'den önceki kardeşi seçer.
+                //$("h1").prevAll().css({//h1'den önceki tüm kardeşleri seçer.
+                //$("h1").prevUntil("#div2").css({//h1'den önce div2'ye kadar olan kardeşleri seçer.
+                //$("#div2").siblings("h1").css({//Kardeşlerden h1 olanları seç
+                $("#div2").siblings().css({//Div 2 ile aynı statüde bulunanlar için işlem yapılır.Burada div3 ve h1.
+                    "border": "2px solid red",
+                    "color": "red"
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>
